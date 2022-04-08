@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>rsMAPS</h1>
+            <h2>Not all who wander are lost... especially with us.</h2>
+            <ul>
+                <li><a href="./user-settings.html">User Settings</a></li>
+                <li><a href="./map.html">Map</a></li>
+            </ul>
+        </header>
+            <h3>~Colors~</h3>
+            <form onsubmit="onSubmitForm(event)">
+                <div>
+                    <h4>Please enter your e-mail.</h4>
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" required/>
+                </div>
+                <div>
+                    <h4>Please enter your age.</h4>
+                    <input type="range" id="range" name="range" value="18"
+                           min="18" max="120" onchange="showAge(this.value)">
+                        <span class="currAge">18</span>
+                  </div>
+                <div>
+                    <h4>Choose your background color:</h4>
+                    <label for="backgroundColor">Background Color:</label>
+                    <input type="color" id="backgroundColor" name="backgroundColor" oninput="onBcgChange(event)"value="#cedaaf"/>
+                </div>
+                <div>
+                    <h4>Choose your text color:</h4>
+                    <label for="head">Text:</label>
+                <input type="color" id="head" name="head" oninput="onColorChange(event)"
+                value="#cedaaf"/>
+            </div>
+                <div>
+                    <h4>When is your birthday?</h4>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" min="1910-01-01" max="2019-12-31" oninput="onDob(this.value)"/>
+                </div>
+                <div>
+                    <h4>What time were you born?</h4>
+                    <label for="hob">Time of Birth:</label>
+                    <input type="time" id="hob" name="hob" oninput="onHob(this.value)"/>
+                </div>
+                <button>Submit</button>
+        </form>
+    </main>
+    <script src="./js/services/storageService.js"></script>
+    <script src="./js/services/userService.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
